@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.11'
-gem 'sqlite3', '1.3.3', :group => :development
+gem 'sqlite3', '1.3.3' #, :group => :development
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '3.0.pre2'
 
 group :development do
+  gem 'heroku' # railstutorial.org overlooks this
   gem 'rspec-rails', '2.6.1'
   gem 'annotate', '2.4.0'
   gem 'faker', '0.3.1'
@@ -16,6 +17,10 @@ group :test do
   gem 'webrat', '0.7.1'
   gem 'spork', '0.9.0.rc8'
   gem 'factory_girl_rails', '1.0'
+end
+
+group :development, :test do
+    gem 'web-app-theme', '>= 0.6.2'
 end
 
 # Use unicorn as the web server
