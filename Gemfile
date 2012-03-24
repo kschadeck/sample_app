@@ -10,6 +10,9 @@ group :development do
   gem 'annotate', '2.4.0'
   gem 'faker', '0.3.1'
   gem 'annotate', '2.4.0'
+  #gem 'ruby-debug', '0.10.4'
+  #gem "color_debug_messages", "1.1.3"
+  #gem "ruby-debug19", "~> 0.11.6"
 end
 
 group :test do
@@ -18,6 +21,10 @@ group :test do
   gem 'spork', '0.9.0.rc8'
   gem 'factory_girl_rails', '1.0'
   gem 'shoulda', '3.0.1'
+  gem 'shoulda-matchers', '1.0.0'
+  #gem 'ruby-debug', '0.10.4'
+  #gem "color_debug_messages", "1.1.3"
+  #gem "ruby-debug19", "~> 0.11.6"
 end
 
 # Use unicorn as the web server
