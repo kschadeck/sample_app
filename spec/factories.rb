@@ -6,10 +6,11 @@ Factory.define :user do |user|
   user.password_confirmation "foobartoon"
 end
 
-Factory.sequence :name do |n|
-  "Person #{n}"
-end
-
 Factory.sequence :email do |n|
   "person-#{n}@example.com"
+end
+
+Factory.define :micropost do |micropost|
+  micropost.content "Foo bar"
+  micropost.association :user
 end
