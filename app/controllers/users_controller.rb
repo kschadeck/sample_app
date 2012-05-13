@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
     @title = "Edit User"
   end
   
@@ -41,7 +41,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated."
-      redirect_to @user
+      redirect_to current_user
+      #redirect_to @user
     else
       @title = "Edit User"
       render 'edit'

@@ -4,13 +4,18 @@ module SessionsHelper
     cookies.permanent.signed[:remember_token] = [user.id, user.salt]
     self.current_user = user
   end
-
-  def signed_in?
-    !current_user.nil?
+  #setter
+  def current_user=(user)
+    @current_user = user
   end
-
+  
+  #getter - short circuit evaluation. if it is not set, set it, if it is set use it.
   def current_user
     @current_user ||= user_from_remember_token
+  end
+  
+  def signed_in?
+    !current_user.nil?
   end
   
   def sign_out
@@ -32,6 +37,9 @@ module SessionsHelper
     clear_return_to
   end
 
+  def authenticate
+    deny_access unless signed_in?
+  end
 
   private
 
